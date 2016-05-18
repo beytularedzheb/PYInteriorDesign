@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html lang="#{languageController.locale}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <f:view locale="#{languageController.locale}">
+        <h:head>
+            <title>#{msg.About}</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="author" content="Petar Yakimov" />
+            <meta name="description" content="E-Design III Course Project" />
+            <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+            <script type="text/javascript" src="resources/js/mootools-1.2.1-core.js"></script>
+            <script type="text/javascript" src="resources/js/mootools-1.2-more.js"></script>
+        </h:head>
+        <h:body>
+            <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- HEADER -->
+                <header id="header">
+
+                    <a href="index.html" title="Site Logo">
+                        <img src="resources/layout-img/logo.png" alt="Site Logo" />
+                    </a>
+
+                    <!-- Category Navigation -->
+                    <nav id="category-nav">
+                        <ul id="cat-menu">
+                            <li><a href="index.xhtml"><span>#{msg.Home}</span></a></li>
+                            <li><a href="portfolio.xhtml"><span>#{msg.Portfolio}</span></a></li>
+                            <li><a href="about.xhtml"><span>#{msg.About}</span></a></li>
+                            <li><a href="contacts.xhtml"><span>#{msg.Contacts}</span></a></li>
+                        </ul>
+                    </nav>
+                    <!-- End Category Navigation -->
+                </header>	
+                <!-- End HEADER -->	
+
+                <!-- MAIN -->
+                <div id="main" class="clear">	
+
+                    <!-- Main Content - Posts -->
+                    <section id="post-section">
+
+                        <!-- Top Posts -->
+                        <section id="top-posts">
+                            <article class="post clear">
+                                <div class="time-box">
+                                    <div class="time">#{msg.AboutPYDesignStudioTitle}</div>
+                                </div>
+                                <p>
+                                    <h:outputText escape="false" value="#{msg.AboutPYDesignStudioText}"></h:outputText>
+                                </p>
+                            </article>
+                        </section>
+                        <!-- End Top Posts -->
+
+                    </section>
+                    <!-- End Main Content - Posts -->
+
+                </div>
+                <!-- End MAIN -->
+
+                <!-- Footer -->
+                <footer id="footer">
+                    #{msg.IndexPageTitle} | #{msg.AuthorName} | 2016 | 
+                    <h:form id="languageForm" style="display: inline;">
+                        <h:selectOneMenu value="#{languageController.language}" onchange="submit()">
+                            <f:selectItem itemValue="en" itemLabel="#{msg.English}" />
+                            <f:selectItem itemValue="bg" itemLabel="#{msg.Bulgarian}" />
+                        </h:selectOneMenu>
+                    </h:form>
+                </footer>
+                <!-- End Footer -->	
+
+            </div>
+            <!-- End Wrapper -->
+
+        </h:body>
+    </f:view>
+</html>
